@@ -15,7 +15,14 @@ const movies = [
 ];
 
 function findMoviesByYear(movies, year) {
-  // Start coding here
+  let result = []
+  for (let movie of movies){
+    const releaseDate = new Date(movie.releaseDate)
+    if (releaseDate.getFullYear() === year){
+      result.push("{ title : \"" + movie.title + "\" " + "releaseDate: " + "\"" + movie.releaseDate + "\", " + "genre: " + "\"" + movie.genre + "\" ");
+    }
+  }
+  return result
 }
 
 console.log(findMoviesByYear(movies, 1994));
